@@ -6,8 +6,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        int fuel = Integer.parseInt(scan.nextLine());
-        int horsePower = Integer.parseInt(scan.nextLine());
+        int fuel;
+        int horsePower;
+
+        fuel = Integer.parseInt(scan.nextLine());
+        horsePower = Integer.parseInt(scan.nextLine());
         Vehicle raceMotorcycle = new RaceMotorcycle(fuel, horsePower);
         System.out.println(raceMotorcycle);
 
