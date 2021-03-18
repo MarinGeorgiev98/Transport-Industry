@@ -40,16 +40,6 @@ public class Vehicle {
         this.horsePower = horsePower;
     }
 
-    public void drive(int kilometers) {
-        if (canDrive(kilometers)) {
-            this.fuel -= this.fuelConsumption * kilometers;
-        }
-    }
-
-    private boolean canDrive(int kilometers) {
-        return this.fuel >= this.fuelConsumption * kilometers;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
