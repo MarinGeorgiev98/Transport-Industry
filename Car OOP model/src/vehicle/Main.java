@@ -6,14 +6,24 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        Vehicle raceMotorcycle = new RaceMotorcycle(5, 20);
-        Vehicle crossMotorcycle = new CrossMotorcycle(10, 15);
-        Vehicle familyCar = new FamilyCar(2, 5);
-        Vehicle sportCar = new SportCar(3, 4);
-
+        int fuel = Integer.parseInt(scan.nextLine());
+        int horsePower = Integer.parseInt(scan.nextLine());
+        Vehicle raceMotorcycle = new RaceMotorcycle(fuel, horsePower);
         System.out.println(raceMotorcycle);
+
+        fuel = Integer.parseInt(scan.nextLine());
+        horsePower = Integer.parseInt(scan.nextLine());
+        Vehicle crossMotorcycle = new CrossMotorcycle(fuel, horsePower);
         System.out.println(crossMotorcycle);
+
+        fuel = Integer.parseInt(scan.nextLine());
+        horsePower = Integer.parseInt(scan.nextLine());
+        Vehicle familyCar = new FamilyCar(fuel, horsePower);
         System.out.println(familyCar);
+
+        fuel = Integer.parseInt(scan.nextLine());
+        horsePower = Integer.parseInt(scan.nextLine());
+        Vehicle sportCar = new SportCar(fuel,horsePower);
         System.out.println(sportCar);
     }
 }
