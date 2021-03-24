@@ -10,7 +10,7 @@ import java.util.Set;
 public class AirportParking {
     private int parkingSize;
     private int priceForAMinute;
-    public Map<String, Set<Vehicle>> parkingLots;
+    private Map<String, Set<Vehicle>> parkingLots;
     private Map<Vehicle, Integer> reservedMinutes;
     private int price;
 
