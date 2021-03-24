@@ -5,8 +5,8 @@ HighSpeedRail, 56, 300
 FamilyCar, 10, 80
 RaceMotorcycle, 30, 100
 SportCar, 50, 230
-Locomotive, 30, 200
+Locomotive, 320, 200
 Rotorcraft, 40, 250
 Airplane, 120, 400
 HighSpeedRail, 20, 150
-InvalidVehicleNameInput, 20, 30
+Locomotive, 30, 40
