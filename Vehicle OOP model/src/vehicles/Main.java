@@ -129,8 +129,9 @@ public class Main {
         System.out.println();
     }
 
-    private static void sortByFieldMethod(EnumMap<VehicleType, Set<Vehicle>> vehicles) {
+    private static void sortByFieldMethod(EnumMap<VehicleType, Set<Vehicle>> vehicles) throws IOException {
         File sortingFile = new File("SortingFile.txt");
+        sortingFile.createNewFile();
         try {
             Scanner read = new Scanner(sortingFile);
             while (read.hasNextLine()) {

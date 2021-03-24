@@ -1,0 +1,6 @@
+Sort by FAMILYCAR fuel
+Sort by FAMILYCAR speed
+Sort by AIRPLANE speed
+Sort by LOCOMOTIVE fuel
+Sort by AIRPLANE fuel
+Sort by LOCOMOTIVE speed
