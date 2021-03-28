@@ -16,12 +16,13 @@ import domainmodel.trains.Locomotive;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws SQLException {
 
         EnumMap<VehicleType, Set<Vehicle>> vehicles = new EnumMap<>(VehicleType.class);
 
@@ -33,6 +34,31 @@ public class Main {
         AirportParking airportParking = new AirportParking(20, 4);
         airportParking.canParkVehicle(familyCar, 5);
         airportParking.exitVehicle(familyCar);
+
+        accessDatabase(familyCar);
+    }
+
+    private static void accessDatabase(Vehicle familyCar) throws SQLException {
+        Connection connection = DriverManager
+                .getConnection
+                        ("jdbc:mysql://localhost:3306/vehicle", "root", "");
+
+        String preparedStatement =
+                String.format("INSERT INTO `familycars`" +
+                        " (`speed`, `vehicle_color`) VALUES " +
+                        "('%d', '%s')", familyCar.getSpeed(), familyCar.getRandomColor());
+        PreparedStatement stmt = connection.prepareStatement(preparedStatement);
+        stmt.executeUpdate();
+
+        PreparedStatement newStmt = connection.prepareStatement
+                ("SELECT * FROM vehicle.familycars");
+        ResultSet rs = newStmt.executeQuery();
+
+        while(rs.next()) {
+            System.out.println(rs.getInt("speed") + " "
+                    + rs.getString("vehicle_color"));
+        }
+        connection.close();
     }
 
     private static void createVehicleObjectsMethod(EnumMap<VehicleType, Set<Vehicle>> vehicles) {
